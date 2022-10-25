@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class Registration extends StatefulWidget {
+  const Registration({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Registration> createState() => _RegistrationState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _RegistrationState extends State<Registration> {
   final formKey = GlobalKey<FormState>(); //key for form
   String name="";
   @override
@@ -38,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(height: height*0.05,),
                 TextFormField(
                   decoration: InputDecoration(
-                    labelText: "Enter your email id"
+                      labelText: "Enter your email id"
 
                   ),
                   validator: (value){
@@ -46,11 +43,23 @@ class _MyHomePageState extends State<MyHomePage> {
                       return "Enter a valid email address!";
                     }else{
                       return null;
-                      }
+                    }
                   },
                 ),
                 SizedBox(height: height*0.05,),
-                Text("Home Screen!!")
+                TextFormField(
+                  decoration: InputDecoration(
+                      labelText: "Enter your password"
+
+                  ),
+                  validator: (value){
+                    if(value!.isEmpty || RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value!)){
+                      return "Wrong Password";
+                    }else{
+                      return null;
+                    }
+                  },
+                )
               ],
             ),
           ),
@@ -58,6 +67,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-
