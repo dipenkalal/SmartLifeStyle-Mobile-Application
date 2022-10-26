@@ -25,35 +25,22 @@ class _MyHomePageState extends State<MyHomePage> {
           elevation: 0,
         ),
         backgroundColor: Color(0xFFffffff),
-        body: Container(
-          padding: const EdgeInsets.only(left: 40, right: 40),
-          child: Form(
-            key: formKey, //key for form
-            child:Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height:height*0.04),
-                Text("Login to continue", style: TextStyle(fontSize: 30, color:Color(0xFF363f93)),),
-                Text("How are you today?", style: TextStyle(fontSize: 16, color:Color(0xFF363f93)),),
-                SizedBox(height: height*0.05,),
-                TextFormField(
-                  decoration: InputDecoration(
-                    labelText: "Enter your email id"
-
-                  ),
-                  validator: (value){
-                    if(value!.isEmpty || RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value!)){
-                      return "Enter a valid email address!";
-                    }else{
-                      return null;
-                      }
-                  },
-                ),
-                SizedBox(height: height*0.05,),
-                Text("Home Screen!!")
-              ],
+        body: Center(
+          child:Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            padding: const EdgeInsets.only(left: 40, right: 40),
+            child: Form(
+              key: formKey, //key for form
+              child:Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height:height*0.04),
+                  Text("Welcome Home @Username", style: TextStyle(fontSize: 50, color:Color(0xFF363f93)),),
+                ],
+              ),
             ),
-          ),
+          ) ,
         )
     );
   }
