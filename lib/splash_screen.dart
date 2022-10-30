@@ -20,11 +20,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _gotohome();
+    //_gotohome();
   }
 
   void _gotohome() async {
-    await Future.delayed(const Duration(microseconds: 2500),() {});
+    await Future.delayed(const Duration(microseconds: 5000),() {});
     // ignore: use_build_context_synchronously
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const Registration())
     );
@@ -32,14 +32,20 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
     body: Center(
-      child: Text('Splash Screen',
-        style: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
+      child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          height: 100,
+          width: 100,
+          color: Colors.white60
         ),
-      ),
+      ],
+      )
+      // child: Image(
+      //     image: AssetImage('assets/flutter.png'))
     ),
     );
   }

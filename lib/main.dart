@@ -1,10 +1,20 @@
 
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:sls/register_screen.dart';
 import 'package:sls/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+class ColorConstants {
+  static const richWhite = Color(0xFFFDFEFF);
+  static const kSecondaryColor = Color(0xFF444FAB);
+  static const kThirdSecondaryColor = Color(0xFF5E6BD8);
+  static const kGravishBlueColor = Color(0xFF9BA1D2);
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -25,7 +35,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: const SplashScreen(),
+      home: AnimatedSplashScreen(splash:
+      'assets/hello.png',
+      //Icons.home,
+      duration: 3000,
+      splashTransition: SplashTransition.fadeTransition,
+      backgroundColor: ColorConstants.richWhite
+          ,nextScreen: Registration()),
     );
   }
 }
