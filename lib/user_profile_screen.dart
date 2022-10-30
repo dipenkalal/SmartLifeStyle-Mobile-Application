@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sls/home_screen.dart';
+import 'package:flutter/cupertino.dart';
 
 
 class UserProfileScreen extends StatefulWidget {
@@ -9,6 +11,30 @@ class UserProfileScreen extends StatefulWidget {
 
 class _UserProfileScreenState extends State<UserProfileScreen> {
   bool showPassword = false;
+  showUpdatetoast() {
+    return Fluttertoast.showToast(
+        msg: "Profile update succesful!",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.white60,
+        textColor: Colors.black87,
+        fontSize: 16.0);
+  }
+  // DateTime selectedDate = DateTime.now();
+  //
+  // Future<void> _selectDate(BuildContext context) async {
+  //   final DateTime? picked = await showDatePicker(
+  //       context: context,
+  //       initialDate: selectedDate,
+  //       firstDate: DateTime(2015, 8),
+  //       lastDate: DateTime(2101));
+  //   if (picked != null && picked != selectedDate) {
+  //     setState(() {
+  //       selectedDate = picked;
+  //     });
+  //   }
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +62,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         ],
       ),
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/bg.png'),fit: BoxFit.cover,),
+
+        ),
         padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
         child: GestureDetector(
           onTap: () {
@@ -105,8 +136,28 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               buildTextField("Password", "*********", true),
               buildTextField("Location", "Windsor", false),
               const SizedBox(
+                height: 15,
+              ),
+              //--------
+              // ---------------------------------------------------------------
+              Text("Pick your birth date"),
+              Container(
+                height: 200,
+                child: CupertinoDatePicker(
+                  mode: CupertinoDatePickerMode.date,
+                  initialDateTime: DateTime(1969, 1, 1),
+                  onDateTimeChanged: (DateTime newDateTime) {
+                    // Do something
+                  },
+                ),
+              ),
+
+
+              //Text(showDatePicker(context: context, initialDate: initialDate, firstDate: firstDate, lastDate: lastDate)),
+              const SizedBox(
                 height: 35,
               ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -121,7 +172,10 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showUpdatetoast();
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyHomePage(title: "Welcome")));
+                    },
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
                         padding:

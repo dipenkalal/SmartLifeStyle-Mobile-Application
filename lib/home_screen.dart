@@ -21,13 +21,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return  Scaffold(
         key: _scaffoldKey,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Colors.transparent,
+        //   elevation: 0,
+        // ),
         backgroundColor: Color(0xFFffffff),
         body: Center(
           child:Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/bg.png'),fit: BoxFit.cover,),
+
+            ),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             padding: const EdgeInsets.only(left: 40, right: 40),
@@ -36,8 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height:height*0.04),
-                  Text("Welcome Home @Username", style: TextStyle(fontSize: 50, color:Color(0xFF363f93)),),
+                  SizedBox(height:height*0.20),
+                  Text("Welcome Home @Test User", style: TextStyle(fontSize: 50, color:Color(0xFF363f93)),),
                   const SizedBox(
                     height: 35,
                   ),
