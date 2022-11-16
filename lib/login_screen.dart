@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sls/register_screen.dart';
 import 'package:sls/user_profile_screen.dart';
+import 'package:sls/Utilities/genFormField.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -94,6 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       SizedBox(height: height*0.03,),
                       TextFormField(
+                        obscureText: true,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),

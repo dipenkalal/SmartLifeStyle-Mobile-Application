@@ -1,6 +1,6 @@
 import 'package:conditional_questions/conditional_questions.dart';
 // import 'package:flutter/material.dart';
-import 'package:sls/Categories.dart';
+import 'package:sls/Category.dart';
 
 
 void main() {
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 print("validated!");
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Categories()),
+                  MaterialPageRoute(builder: (context) => const CategoryScreen()),
                 );
               }
             },

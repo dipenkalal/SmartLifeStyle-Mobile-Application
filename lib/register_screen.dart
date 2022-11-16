@@ -89,6 +89,7 @@ class _RegistrationState extends State<Registration> {
                         ),
                         SizedBox(height: height*0.03,),
                         TextFormField(
+                          obscureText: true,
                           decoration: new InputDecoration(
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.0),

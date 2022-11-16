@@ -60,14 +60,14 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
+  - assets/
+  - assets/images/
+  - assets/michael-dziedzic-nc11Hg2ja-s-unsplash.jpg
+  - assets/pexels-4906297.jpg
+  - assets/pexels-6348047.jpg
+  - assets/pexels-5778465.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

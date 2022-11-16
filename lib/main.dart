@@ -1,6 +1,9 @@
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sls/Category.dart';
+import 'package:sls/login_screen.dart';
 import 'package:sls/register_screen.dart';
 import 'package:sls/splash_screen.dart';
 
@@ -41,7 +44,7 @@ class MyApp extends StatelessWidget {
       duration: 3000,
       splashTransition: SplashTransition.fadeTransition,
       backgroundColor: ColorConstants.richWhite
-          ,nextScreen: Registration()),
+          ,nextScreen: LoginScreen()),
     );
   }
 }
