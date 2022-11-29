@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:sls/auth_controller.dart';
 import 'package:sls/login_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -16,7 +18,9 @@ class _RegistrationState extends State<Registration> {
   Widget build(BuildContext context) {
     final double height= MediaQuery.of(context).size.height;
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
+    var confimrpasswordController = TextEditingController();
     showRegistertoast() {
       return Fluttertoast.showToast(
           msg: "Registering...",
@@ -72,6 +76,7 @@ class _RegistrationState extends State<Registration> {
                         Text("How are you today?", style: TextStyle(fontSize: 20, color:Color(0xFF363f93)),),
                         SizedBox(height: height*0.10,),
                         TextFormField(
+                          controller: emailController,
                           decoration: new InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
@@ -89,6 +94,7 @@ class _RegistrationState extends State<Registration> {
                         ),
                         SizedBox(height: height*0.03,),
                         TextFormField(
+                          controller: passwordController,
                           obscureText: true,
                           decoration: new InputDecoration(
                               border: OutlineInputBorder(
@@ -127,39 +133,45 @@ class _RegistrationState extends State<Registration> {
                         ),
 
                         SizedBox(height: height*0.03,),
-                        Align(
-                          alignment: Alignment.bottomRight,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(4),
-                            child: Stack(
-                              children: <Widget>[
-                                Positioned.fill(
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: <Color>[
-                                          Color(0xFF363f60),
-                                          Color(0xFF363f90),
-                                          Color(0xFF363f99),
-                                        ],
+                        GestureDetector(
+                          onTap: (){
+                            AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
+                          },
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(4),
+                              child: Stack(
+                                children: <Widget>[
+                                  Positioned.fill(
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: <Color>[
+                                            Color(0xFF363f60),
+                                            Color(0xFF363f90),
+                                            Color(0xFF363f99),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                TextButton(
-                                  style: TextButton.styleFrom(
-                                    foregroundColor: Colors.white,
-                                    padding: const EdgeInsets.all(16.0),
-                                    textStyle: const TextStyle(fontSize: 20),
-                                  ),
-                                  onPressed: () {
-                                    showRegistertoast();
-                                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LoginScreen()));
+                                  TextButton(
+                                    style: TextButton.styleFrom(
+                                      foregroundColor: Colors.white,
+                                      padding: const EdgeInsets.all(16.0),
+                                      textStyle: const TextStyle(fontSize: 20),
+                                    ),
+                                    onPressed: () {
+                                      formKey.currentState!.validate();
+                                      showRegistertoast();
+                                       Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LoginScreen()));
 
-                                  },
-                                  child: const Text('Register'),
-                                ),
-                              ],
+                                    },
+                                    child: const Text('Register'),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -191,3 +203,4 @@ class _RegistrationState extends State<Registration> {
 
   }
 }
+

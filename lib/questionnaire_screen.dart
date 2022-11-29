@@ -1,6 +1,7 @@
 import 'package:conditional_questions/conditional_questions.dart';
 // import 'package:flutter/material.dart';
 import 'package:sls/Category.dart';
+import 'package:sls/Individual_category.dart';
 
 
 void main() {
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 print("validated!");
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const CategoryScreen()),
+                  MaterialPageRoute(builder: (context) => const Individual_Category_Screen()),
                 );
               }
             },
