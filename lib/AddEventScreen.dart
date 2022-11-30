@@ -11,9 +11,9 @@ class AddEventScreen extends StatelessWidget{
     return new MaterialApp(
       title:"Smart Lifestyle",
       home:new Scaffold(
-          appBar:new AppBar(
-              title:new Text('Add New Event')
-          ),
+          // appBar:new AppBar(
+          //     title:new Text('Add New Event')
+          // ),
           body:Column(
             children: [
               Text("Add new event"),
