@@ -3,6 +3,8 @@ import 'package:conditional_questions/conditional_questions.dart';
 import 'package:sls/Category.dart';
 import 'package:sls/Individual_category.dart';
 
+import 'category_screen.dart';
+
 
 void main() {
   runApp(QuestionnaireScreen());
@@ -51,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 print("validated!");
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Individual_Category_Screen()),
+                  MaterialPageRoute(builder: (context) => const CategoryScreen()),
                 );
               }
             },

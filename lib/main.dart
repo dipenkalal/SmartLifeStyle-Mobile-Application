@@ -8,14 +8,17 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:sls/Category.dart';
 import 'package:sls/auth_controller.dart';
+import 'package:sls/clothe_detail_screen.dart';
 import 'package:sls/login_screen.dart';
 import 'package:sls/register_screen.dart';
 import 'package:sls/splash_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import 'category_screen.dart';
+
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp().then((value) => Get.put(AuthController()));
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp().then((value) => Get.put(()));
   runApp(const MyApp());
 }
 
@@ -42,15 +45,31 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       theme: ThemeData(
 
-        primarySwatch: Colors.red,
-      ),
+        primarySwatch: Colors.deepPurple,
+        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+    fontFamily: 'Raleway',
+    textTheme: ThemeData.light().textTheme.copyWith(
+    bodyText1: TextStyle(
+    color: Color.fromRGBO(20, 51, 51, 1),
+    ),
+    bodyText2: TextStyle(
+    color: Color.fromRGBO(20, 51, 51, 1),
+    ),
+        subtitle1: TextStyle(
+    fontSize: 20,
+    fontFamily: 'RobotoCondensed',
+    fontWeight: FontWeight.bold,
+    )),),
       home: AnimatedSplashScreen(splash:
       'assets/hello.png',
           //Icons.home,
           duration: 3000,
           splashTransition: SplashTransition.fadeTransition,
           backgroundColor: ColorConstants.richWhite,
-          nextScreen: SplashScreen()),
+          nextScreen: Registration()),
+      routes: {
+        ClothDetailScreen.routeName: (ctx) => ClothDetailScreen()
+      },
     );
   }
 }

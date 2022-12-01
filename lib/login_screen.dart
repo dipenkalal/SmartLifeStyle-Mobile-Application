@@ -82,6 +82,8 @@ class LoginScreen extends StatelessWidget {
                           const Text("How are you today?", style: TextStyle(fontSize: 20, color:Color(0xFF363f93)),),
                           SizedBox(height: height*0.10,),
                           TextFormField(
+                            keyboardType: TextInputType.emailAddress,
+                            onChanged: (value) {},
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.0),
@@ -100,6 +102,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                           SizedBox(height: height*0.03,),
                           TextFormField(
+                            onChanged: (value) {},
                             obscureText: true,
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(

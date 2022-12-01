@@ -76,7 +76,7 @@ class _RegistrationState extends State<Registration> {
                         Text("How are you today?", style: TextStyle(fontSize: 20, color:Color(0xFF363f93)),),
                         SizedBox(height: height*0.10,),
                         TextFormField(
-                          controller: emailController,
+                          //controller: emailController,
                           decoration: new InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
@@ -95,7 +95,6 @@ class _RegistrationState extends State<Registration> {
                         SizedBox(height: height*0.03,),
                         TextFormField(
                           controller: passwordController,
-                          obscureText: true,
                           decoration: new InputDecoration(
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.0),
@@ -134,9 +133,9 @@ class _RegistrationState extends State<Registration> {
 
                         SizedBox(height: height*0.03,),
                         GestureDetector(
-                          onTap: (){
-                            AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
-                          },
+                          // onTap: (){
+                          //   AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
+                          // },
                           child: Align(
                             alignment: Alignment.bottomRight,
                             child: ClipRRect(

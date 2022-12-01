@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:sls/Dashboard.dart';
 import 'package:sls/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -174,7 +175,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                   ElevatedButton(
                     onPressed: () {
                       showUpdatetoast();
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyHomePage(title: "Welcome")));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Dashboard()));
                     },
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(Colors.deepPurple),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sls/Dashboard.dart';
 import 'package:sls/questionnaire_screen.dart';
+
 
 
 class MyHomePage extends StatefulWidget {
@@ -72,7 +74,32 @@ class _MyHomePageState extends State<MyHomePage> {
                           letterSpacing: 2.2,
                           color: Colors.white),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 35,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  Dashboard()),
+                      );
+                    },
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
+                        padding:
+                        MaterialStateProperty.all(const EdgeInsets.all(20)),
+                        textStyle: MaterialStateProperty.all(
+                            const TextStyle(fontSize: 14, color: Colors.white))),
+                    child: const Text(
+                      "Dashboard",
+                      style: TextStyle(
+                          fontSize: 14,
+                          letterSpacing: 2.2,
+                          color: Colors.white),
+                    ),
                   )
+
                   // TextButton(
                   //   style: TextButton.styleFrom(
                   //     foregroundColor: Colors.black,

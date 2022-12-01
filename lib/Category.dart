@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore_platform_interface/cloud_firestore_platform_interface.dart';
 import 'package:sls/Individual_category.dart';
 
-class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({Key? key}) : super(key: key);
+class Category_Screen extends StatefulWidget {
+  const Category_Screen({Key? key}) : super(key: key);
 
   @override
-  State<CategoryScreen> createState() => _CategoryScreenState();
+  State<Category_Screen> createState() => _Category_ScreenState();
 }
 
-class _CategoryScreenState extends State<CategoryScreen> {
+class _Category_ScreenState extends State<Category_Screen> {
 
   final List<Map> categoriesList = List.generate(12, (index) => { "id":index, "name":"Category $index" }).toList();
 
