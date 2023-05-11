@@ -1,4 +1,4 @@
-# SmartLifeStyle
+# SmartLifeStyle - Mobile Application 📱
 
 ![GitHub stars](https://img.shields.io/github/stars/dipenkalal/SmartLifeStyle-Mobile-Application?style=flat-square)
 ![GitHub forks](https://img.shields.io/github/forks/dipenkalal/SmartLifeStyle-Mobile-Application?style=flat-square)
